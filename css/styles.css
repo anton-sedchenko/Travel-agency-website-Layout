@@ -33,6 +33,7 @@ table{border-collapse:collapse;border-spacing:0}
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+    line-height: 24px;
 }
 
 .section__intro {
@@ -58,8 +59,19 @@ body {
 }
 
 .header {
-    margin-bottom: 280px;
-    position: relative;
+    z-index: 500;
+    position: absolute;
+    width: 100%;
+    color: white;
+    transition: all 0.3s ease-out 0s;
+}
+
+.header-sticky {
+    position: fixed;
+    z-index: 1000;
+    background: #fff;
+    color: #000;
+    transition: all 0.3s ease-out 0s;
 }
 
 .header::before {
@@ -104,7 +116,6 @@ body {
     font-weight: 400;
     display: inline-block;
     padding: 30px 15px;
-    color: white;
 }
 
 .nav__list__item:last-child {
@@ -124,6 +135,11 @@ body {
     transition: transform 0.4s ease;
 }
 
+.nav__list__item:hover {
+    color: #EEC41E;
+    transition: transform 0.4s ease;
+}
+
 .nav__list__item:hover::after {
     transform: scaleX(1);
 }
@@ -133,16 +149,62 @@ body {
 }
 
 .intro__title__container {
+    padding-top: 371px;
     max-width: 540px;
+    color: #ffffff;
 }
 
 .intro__title {
     font-size: 54px;
     line-height: 1.2;
-    color: #ffffff;
+    margin-bottom: 30px;
+    animation-delay: 0s;
 }
 
+.intro__title span {
+    color: #EEC41E;
+}
 
+.intro__title__container p {
+    margin-bottom: 45px;
+    font-size: 18px;
+    animation-delay: 0.2s;
+}
+
+.intro__btn {
+    font-weight: 500;
+    line-height: 50px;
+    color: #fff;
+    height: 50px;
+    padding: 0 40px;
+    border-radius: 5px;
+    background-color: #EEC41E;
+    transition: box-shadow 0.5s ease, background-color 0.3s ease;
+    animation-delay: 0.3s;
+}
+
+.intro__btn:hover {
+    background-color: #C1A11F;
+    box-shadow: 0 0 25px rgba(193, 161, 31, 0.4);
+}
+
+@keyframes fadeInLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-left {
+    animation-name: fadeInLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
 
 
 
